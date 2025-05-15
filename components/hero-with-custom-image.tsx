@@ -4,18 +4,15 @@ import Image from "next/image"
 
 export function Hero() {
   return (
-    <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 overflow-hidden">
-      {/* Background Image */}
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-background.jpg" // Replace with your actual image path
-          alt="People connecting at a ministry event"
+          src="/hero-background.jpg"
+          alt="Hero background"
           fill
           priority
-          className="object-cover"
+          className="object-cover brightness-[0.7]"
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-indigo-900/70 mix-blend-multiply" />
       </div>
 
       {/* Content */}

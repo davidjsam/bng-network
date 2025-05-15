@@ -12,11 +12,11 @@ export function FocusAreas() {
               Breaking New Grounds facilitates your growth and development in three areas:
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            <Card className="flex flex-col items-center text-center">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="group hover:shadow-lg transition-all duration-200">
               <CardHeader>
                 <Users className="h-10 w-10 mb-2 text-primary" />
-                <CardTitle>Relationships</CardTitle>
+                <CardTitle className="group-hover:text-primary transition-colors">Relationships</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-left">
@@ -27,10 +27,10 @@ export function FocusAreas() {
                 </ul>
               </CardContent>
             </Card>
-            <Card className="flex flex-col items-center text-center">
+            <Card className="group hover:shadow-lg transition-all duration-200">
               <CardHeader>
                 <BookOpen className="h-10 w-10 mb-2 text-primary" />
-                <CardTitle>Instruction</CardTitle>
+                <CardTitle className="group-hover:text-primary transition-colors">Instruction</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-left">
@@ -40,10 +40,10 @@ export function FocusAreas() {
                 </ul>
               </CardContent>
             </Card>
-            <Card className="flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
+            <Card className="group hover:shadow-lg transition-all duration-200 md:col-span-2 lg:col-span-1">
               <CardHeader>
                 <Calendar className="h-10 w-10 mb-2 text-primary" />
-                <CardTitle>Settings</CardTitle>
+                <CardTitle className="group-hover:text-primary transition-colors">Settings</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-left">
