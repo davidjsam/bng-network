@@ -52,7 +52,12 @@ export default function Home() {
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
-                <Button size="lg" className="w-full font-medium" asChild>
+                <Button 
+                  size="lg" 
+                  variant="default"  // This will use the default primary color
+                  className="w-full font-medium bg-primary text-primary-foreground hover:bg-primary/90"
+                  asChild
+                >
                   <Link href="/contact" className="flex items-center justify-center">
                     Contact Us <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
