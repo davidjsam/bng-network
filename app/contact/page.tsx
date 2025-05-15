@@ -97,7 +97,7 @@ export default function ContactPage() {
                     </label>
                     <Textarea id="message" placeholder="Your message here..." className="min-h-[150px]" />
                   </div>
-                  <Button type="submit" className="w-full">
+                  <Button type="submit" size="lg" className="w-full font-medium">
                     Send Message
                   </Button>
                 </form>

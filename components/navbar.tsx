@@ -105,6 +105,11 @@ export function Navbar() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
+                <Link href="/testimonials" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Testimonials</NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>Contact</NavigationMenuLink>
                 </Link>
@@ -165,6 +170,16 @@ export function Navbar() {
                 Events
               </Link>
               <Link
+                href="/testimonials"
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "text-lg font-medium transition-colors hover:text-primary",
+                  pathname === "/testimonials" ? "text-primary" : "text-muted-foreground",
+                )}
+              >
+                Testimonials
+              </Link>
+              <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
                 className={cn(
@@ -183,7 +198,7 @@ export function Navbar() {
               <span className="font-bold">BNG</span>
             </Link>
           </div>
-          <Button asChild className="hidden md:flex">
+          <Button asChild className="hidden md:flex font-medium">
             <Link href="/contact">Get Involved</Link>
           </Button>
         </div>

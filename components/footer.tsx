@@ -3,7 +3,7 @@ import { Mail } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="w-full py-6 bg-slate-900 text-slate-50">
+    <footer className="w-full py-6 bg-indigo-900 text-indigo-50">
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col space-y-4">
@@ -47,7 +47,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-slate-800 pt-6 text-center text-sm">
+        <div className="mt-8 border-t border-indigo-800 pt-6 text-center text-sm">
           <p>© {new Date().getFullYear()} Breaking New Grounds Network. All rights reserved.</p>
         </div>
       </div>

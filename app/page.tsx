@@ -5,6 +5,7 @@ import { Hero } from "@/components/hero"
 import { FocusAreas } from "@/components/focus-areas"
 import { RelatedPrograms } from "@/components/related-programs"
 import { Footer } from "@/components/footer"
+import { Testimonials } from "@/components/testimonials"
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
 
-        <section className="py-12 md:py-16 lg:py-20 bg-slate-50">
+        <section className="py-12 md:py-16 lg:py-20 bg-white">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -37,6 +38,8 @@ export default function Home() {
 
         <FocusAreas />
 
+        <Testimonials />
+
         <RelatedPrograms />
 
         <section className="py-12 md:py-16 lg:py-20">
@@ -49,8 +52,8 @@ export default function Home() {
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
-                <Button className="w-full" asChild>
-                  <Link href="/contact">
+                <Button size="lg" className="w-full font-medium" asChild>
+                  <Link href="/contact" className="flex items-center justify-center">
                     Contact Us <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

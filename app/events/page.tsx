@@ -34,11 +34,11 @@ export default function EventsPage() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-2">
                       <Calendar className="h-4 w-4 text-primary" />
-                      <span className="text-sm">June 15-17, 2024</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Clock className="h-4 w-4 text-primary" />
-                      <span className="text-sm">9:00 AM - 5:00 PM</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <p className="text-sm text-gray-500">
                       Join us for our annual conference where ministry and business leaders come together to network,
@@ -47,7 +47,7 @@ export default function EventsPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full">Register Now</Button>
+                  <Button className="w-full">Register Interest</Button>
                 </CardFooter>
               </Card>
 
@@ -60,11 +60,11 @@ export default function EventsPage() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-2">
                       <Calendar className="h-4 w-4 text-primary" />
-                      <span className="text-sm">July 8, 2024</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Clock className="h-4 w-4 text-primary" />
-                      <span className="text-sm">6:00 PM - 8:30 PM</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <p className="text-sm text-gray-500">
                       An evening of networking and relationship building for Christian business owners and
@@ -73,7 +73,7 @@ export default function EventsPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full">RSVP</Button>
+                  <Button className="w-full">Express Interest</Button>
                 </CardFooter>
               </Card>
 
@@ -86,11 +86,11 @@ export default function EventsPage() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-2">
                       <Calendar className="h-4 w-4 text-primary" />
-                      <span className="text-sm">August 12, 2024</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Clock className="h-4 w-4 text-primary" />
-                      <span className="text-sm">10:00 AM - 3:00 PM</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <p className="text-sm text-gray-500">
                       A hands-on workshop designed to equip ministry leaders with practical tools and strategies for
@@ -112,11 +112,11 @@ export default function EventsPage() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-2">
                       <Calendar className="h-4 w-4 text-primary" />
-                      <span className="text-sm">September 5, 2024</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Clock className="h-4 w-4 text-primary" />
-                      <span className="text-sm">6:30 PM - 8:30 PM</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <p className="text-sm text-gray-500">
                       The launch of our annual mentorship program, connecting experienced leaders with those early in
@@ -138,11 +138,11 @@ export default function EventsPage() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-2">
                       <Calendar className="h-4 w-4 text-primary" />
-                      <span className="text-sm">October 20, 2024</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Clock className="h-4 w-4 text-primary" />
-                      <span className="text-sm">12:00 PM - 1:30 PM</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <p className="text-sm text-gray-500">
                       An online session exploring how to integrate faith principles into business practices for greater
@@ -151,7 +151,7 @@ export default function EventsPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full">Register</Button>
+                  <Button className="w-full">Register Interest</Button>
                 </CardFooter>
               </Card>
 
@@ -164,11 +164,11 @@ export default function EventsPage() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-2">
                       <Calendar className="h-4 w-4 text-primary" />
-                      <span className="text-sm">December 10, 2024</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Clock className="h-4 w-4 text-primary" />
-                      <span className="text-sm">7:00 PM - 9:00 PM</span>
+                      <span className="text-sm">TBD</span>
                     </div>
                     <p className="text-sm text-gray-500">
                       Join us for a festive evening of celebration, reflection, and connection as we close out the year

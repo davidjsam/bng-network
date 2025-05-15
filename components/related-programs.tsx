@@ -3,7 +3,7 @@ import { School, Heart } from "lucide-react"
 
 export function RelatedPrograms() {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-slate-50">
+    <section className="py-12 md:py-16 lg:py-20 bg-emerald-50">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -20,7 +20,7 @@ export function RelatedPrograms() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-500">
-                  A tuition-free and T.A.N.A.S accredited K-9th Grade school that places an emphasis on ministering to
+                  A tuition-free and T.A.N.A.S accredited K-12th Grade school that places an emphasis on ministering to
                   children of all background types, from single parent and foster families to children of incarcerated
                   parents and domestic violence situations.
                 </p>

@@ -1,17 +1,21 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export function Hero() {
   return (
     <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 overflow-hidden">
-      {/* Video Background */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover">
-          <source src="/Hero.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <Image
+          src="/hero-background.jpg" // Replace with your actual image path
+          alt="People connecting at a ministry event"
+          fill
+          priority
+          className="object-cover"
+        />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-indigo-900/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-indigo-900/70 mix-blend-multiply" />
       </div>
 
       {/* Content */}
@@ -26,20 +30,11 @@ export function Hero() {
               Creating kingdom relationships and partnerships in ministry and business.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 mt-2">
-            <Button
-              size="lg"
-              className="bg-white text-indigo-900 hover:bg-indigo-100 font-semibold px-8 py-6 text-base min-w-[180px]"
-              asChild
-            >
+          <div className="space-x-4">
+            <Button asChild className="bg-white text-indigo-900 hover:bg-indigo-100">
               <Link href="/about">Learn More</Link>
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-white text-white hover:bg-white/20 font-semibold px-8 py-6 text-base min-w-[180px]"
-              asChild
-            >
+            <Button variant="outline" asChild className="border-white text-white hover:bg-white/20">
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>

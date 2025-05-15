@@ -118,7 +118,7 @@ export default function ProgramsPage() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-500 mb-4">
-                        A tuition-free and T.A.N.A.S accredited K-9th Grade school that places an emphasis on
+                        A tuition-free and T.A.N.A.S accredited K-12th Grade school that places an emphasis on
                         ministering to children of all background types, from single parent and foster families to
                         children of incarcerated parents and domestic violence situations.
                       </p>
@@ -135,7 +135,7 @@ export default function ProgramsPage() {
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2">•</span>
-                            <span>K-9th Grade curriculum</span>
+                            <span>K-12th Grade curriculum</span>
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2">•</span>
