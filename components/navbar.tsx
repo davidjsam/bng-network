@@ -5,204 +5,215 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
+import { Menu, ChevronDown } from "lucide-react"
 
 export function Navbar() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = React.useState(false)
+  const [isScrolled, setIsScrolled] = React.useState(false)
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
-        <div className="mr-4 hidden md:flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="hidden font-bold sm:inline-block">Breaking New Grounds</span>
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-200",
+        isScrolled ? "bg-white shadow-md py-2" : "bg-white py-4",
+      )}
+    >
+      <div className="container px-4 md:px-6 mx-auto">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="text-2xl font-bold text-primary">BNG</span>
+            <span className="text-xl font-medium">Network</span>
           </Link>
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>About</NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Programs</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-2">
-                    <li className="row-span-3">
-                      <NavigationMenuLink asChild>
-                        <a
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-slate-50 to-slate-100 p-6 no-underline outline-none focus:shadow-md"
-                          href="/programs"
-                        >
-                          <div className="mb-2 mt-4 text-lg font-medium">Breaking New Grounds Network</div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            Facilitating growth and development in Relationships, Instruction, and Settings.
-                          </p>
-                        </a>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <a
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/programs"
-                        >
-                          <div className="text-sm font-medium leading-none">Relationships</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Mentoring and networking opportunities
-                          </p>
-                        </a>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <a
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/programs"
-                        >
-                          <div className="text-sm font-medium leading-none">Instruction</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Resources and training materials
-                          </p>
-                        </a>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <a
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/programs"
-                        >
-                          <div className="text-sm font-medium leading-none">Settings</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Events, webinars, and networking opportunities
-                          </p>
-                        </a>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/events" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Events</NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/testimonials" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Testimonials</NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Contact</NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="mr-2 md:hidden">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left">
-            <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-              <span className="font-bold">Breaking New Grounds</span>
+
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link
+              href="/about"
+              className={cn(
+                "text-base font-medium hover:text-primary transition-colors",
+                pathname === "/about" ? "text-primary" : "text-gray-700",
+              )}
+            >
+              About
             </Link>
-            <div className="mt-8 flex flex-col space-y-4">
-              <Link
-                href="/"
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "text-lg font-medium transition-colors hover:text-primary",
-                  pathname === "/" ? "text-primary" : "text-muted-foreground",
-                )}
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "text-lg font-medium transition-colors hover:text-primary",
-                  pathname === "/about" ? "text-primary" : "text-muted-foreground",
-                )}
-              >
-                About
-              </Link>
-              <Link
-                href="/programs"
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "text-lg font-medium transition-colors hover:text-primary",
-                  pathname === "/programs" ? "text-primary" : "text-muted-foreground",
-                )}
-              >
-                Programs
-              </Link>
-              <Link
-                href="/events"
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "text-lg font-medium transition-colors hover:text-primary",
-                  pathname === "/events" ? "text-primary" : "text-muted-foreground",
-                )}
-              >
-                Events
-              </Link>
-              <Link
-                href="/testimonials"
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "text-lg font-medium transition-colors hover:text-primary",
-                  pathname === "/testimonials" ? "text-primary" : "text-muted-foreground",
-                )}
-              >
-                Testimonials
-              </Link>
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "text-lg font-medium transition-colors hover:text-primary",
-                  pathname === "/contact" ? "text-primary" : "text-muted-foreground",
-                )}
-              >
-                Contact
-              </Link>
+            <div className="relative group">
+              <button className="flex items-center text-base font-medium text-gray-700 hover:text-primary transition-colors">
+                Programs <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <Link
+                  href="/programs"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >
+                  Overview
+                </Link>
+                <Link
+                  href="/programs#relationships"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >
+                  Relationships
+                </Link>
+                <Link
+                  href="/programs#instruction"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >
+                  Instruction
+                </Link>
+                <Link
+                  href="/programs#settings"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >
+                  Settings
+                </Link>
+              </div>
             </div>
-          </SheetContent>
-        </Sheet>
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            <Link href="/" className="mr-6 flex items-center space-x-2 md:hidden">
-              <span className="font-bold">BNG</span>
+            <Link
+              href="/events"
+              className={cn(
+                "text-base font-medium hover:text-primary transition-colors",
+                pathname === "/events" ? "text-primary" : "text-gray-700",
+              )}
+            >
+              Events
             </Link>
+            <Link
+              href="/testimonials"
+              className={cn(
+                "text-base font-medium hover:text-primary transition-colors",
+                pathname === "/testimonials" ? "text-primary" : "text-gray-700",
+              )}
+            >
+              Success Stories
+            </Link>
+            <Link
+              href="/membership"
+              className={cn(
+                "text-base font-medium hover:text-primary transition-colors",
+                pathname === "/membership" ? "text-primary" : "text-gray-700",
+              )}
+            >
+              Membership
+            </Link>
+            <Link
+              href="/contact"
+              className={cn(
+                "text-base font-medium hover:text-primary transition-colors",
+                pathname === "/contact" ? "text-primary" : "text-gray-700",
+              )}
+            >
+              Contact
+            </Link>
+          </nav>
+
+          <div className="flex items-center space-x-4">
+            <Button className="hidden md:flex font-medium" asChild>
+              <Link href="/membership">Become a Partner</Link>
+            </Button>
+
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" className="md:hidden">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle Menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <div className="flex flex-col space-y-6 mt-8">
+                  <Link
+                    href="/"
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-lg font-medium transition-colors hover:text-primary",
+                      pathname === "/" ? "text-primary" : "text-gray-700",
+                    )}
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    href="/about"
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-lg font-medium transition-colors hover:text-primary",
+                      pathname === "/about" ? "text-primary" : "text-gray-700",
+                    )}
+                  >
+                    About
+                  </Link>
+                  <Link
+                    href="/programs"
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-lg font-medium transition-colors hover:text-primary",
+                      pathname === "/programs" ? "text-primary" : "text-gray-700",
+                    )}
+                  >
+                    Programs
+                  </Link>
+                  <Link
+                    href="/events"
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-lg font-medium transition-colors hover:text-primary",
+                      pathname === "/events" ? "text-primary" : "text-gray-700",
+                    )}
+                  >
+                    Events
+                  </Link>
+                  <Link
+                    href="/testimonials"
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-lg font-medium transition-colors hover:text-primary",
+                      pathname === "/testimonials" ? "text-primary" : "text-gray-700",
+                    )}
+                  >
+                    Success Stories
+                  </Link>
+                  <Link
+                    href="/membership"
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-lg font-medium transition-colors hover:text-primary",
+                      pathname === "/membership" ? "text-primary" : "text-gray-700",
+                    )}
+                  >
+                    Membership
+                  </Link>
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-lg font-medium transition-colors hover:text-primary",
+                      pathname === "/contact" ? "text-primary" : "text-gray-700",
+                    )}
+                  >
+                    Contact
+                  </Link>
+                  <Button className="mt-4 w-full" asChild>
+                    <Link href="/membership" onClick={() => setIsOpen(false)}>
+                      Become a Partner
+                    </Link>
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
-          <Button asChild className="hidden md:flex font-medium">
-            <Link href="/contact">Get Involved</Link>
-          </Button>
         </div>
       </div>
-    </nav>
+    </header>
   )
 }

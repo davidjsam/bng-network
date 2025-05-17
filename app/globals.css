@@ -13,16 +13,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 246 80% 60%;
+    --primary: 0 100% 18%; /* Maroon color */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 160 84% 39%;
+    --secondary: 0 0% 20%; /* Dark gray */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 38 92% 50%;
+    --accent: 0 0% 55%; /* Medium gray */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -45,16 +45,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 246 80% 60%;
+    --primary: 0 100% 18%; /* Maroon color */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 160 84% 39%;
+    --secondary: 0 0% 20%; /* Dark gray */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 38 92% 50%;
+    --accent: 0 0% 55%; /* Medium gray */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -74,7 +74,7 @@
     @apply bg-background text-foreground;
   }
 
-  /* Make all main headings purple */
+  /* Make all main headings maroon */
   h1,
   h2,
   h3,
@@ -89,5 +89,18 @@
   button[class*="btn"],
   a[class*="btn"] {
     @apply font-semibold text-base;
+  }
+
+  /* Section backgrounds with transparency */
+  .bg-section {
+    @apply bg-white/90 backdrop-blur-sm;
+  }
+
+  .bg-section-alt {
+    @apply bg-gray-100/90 backdrop-blur-sm;
+  }
+
+  .bg-section-primary {
+    @apply bg-primary backdrop-blur-sm;
   }
 }
